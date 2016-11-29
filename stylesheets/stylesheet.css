@@ -77,15 +77,15 @@ a {
 
 @media screen and (min-width: 64em) {
   .project-name {
-    font-size: 3rem; } }
+    font-size: 2.75rem; } }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .project-name {
-    font-size: 2rem; } }
+    font-size: 1.90rem; } }
 
 @media screen and (max-width: 42em) {
   .project-name {
-    font-size: 1.6rem; } }
+    font-size: 1.50rem; } }
 
 .project-tagline {
   margin-bottom: 2rem;
