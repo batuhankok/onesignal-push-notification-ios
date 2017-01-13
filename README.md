@@ -5,5 +5,6 @@
 [![Freelance](https://img.shields.io/badge/hire me-yes!-brightgreen.svg?style=flat)](http://batuhan.me/contact)
 
 
-### OneSignal Push Notification Setup for iOS in Swift
-I know, Push Notification can be so annoying problem for iOS developers. However, OneSignal makes your life easy for sending notifications by using web interface of OneSignal. The installing process is a little bit hard, so, I have written here to make your life easier! The tutorial is <a href="http://batuhan.me/onesignal-push-notification-ios/">here!</a>
+## OneSignal Push Notification Setup for iOS in Swift
+I know, Push Notification can be so annoying problem for iOS developers. However, OneSignal makes your life easy for sending notifications by using web interface of OneSignal. The installing process is a little bit hard, so, I have written here to make your life easier! The tutorial is <a href="http://batuhan.me/onesignal-push-notification-ios/">here!</a> <br /><br />
+<a href="http://batuhan.me/onesignal-push-notification-ios/tr.html">Türkçe kılavuz!</a>
