@@ -1,73 +1,109 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>OneSignal Push Notification iOS Kurulumu - Batuhan Kök</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h2 class="project-name">OneSignal Push Notification</h2>
-      <h2 class="project-tagline">iOS Uygulamalar için OneSignal Push Notification to Your Apps for iOS</h2>
-      <a href="http://batuhan.me/onesignal-push-notification-ios/tr.html" class="btn">Türkçe</a>
-      <a href="http://batuhan.me/onesignal-push-notification-ios/" class="btn">English</a>
-      <a href="http://www.batuhan.me" class="btn">Kişisel Sitem</a>
-    </section>
 
-    <section class="main-content">
+<head>
+  <meta charset="UTF-8">
+  <title>OneSignal Push Notification iOS Kurulumu - Batuhan Kök</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/onesignal-push-notification-ios/assets/css/style.css?v=7ffd375541b28b307c38d1eb58e50837ce0d112e">
+</head>
+
+<body>
+  <section class="page-header">
+    <h2 class="project-name">OneSignal Push Notification</h2>
+    <h2 class="project-tagline">iOS Uygulamalar için OneSignal Push Notification to Your Apps for iOS</h2>
+    <a href="http://batuhan.me/onesignal-push-notification-ios/tr.html" class="btn">Türkçe</a>
+    <a href="http://batuhan.me/onesignal-push-notification-ios/" class="btn">English</a>
+    <a href="http://www.batuhan.me" class="btn">Kişisel Sitem</a>
+  </section>
+
+  <section class="main-content">
+    <blockquote>
       <p>Merhaba,</p>
 
-<p>iOS uygulamalarınıza Push Notification özelliği eklemek karmaşık fakat kolay bir işlem. OneSignal bu işlemleri hem daha kolay hale getiriyor hemde güzel web arayüzü sayesinde gönderdiğiniz bildirimlerin istatistiklerini görebiliyorsunuz. Gelin madde madde nasıl kuracağınızı anlatayım...</p>
+      <p>iOS uygulamalarınıza Push Notification özelliği eklemek karmaşık fakat kolay bir işlem. OneSignal bu işlemleri hem
+        daha kolay hale getiriyor hemde güzel web arayüzü sayesinde gönderdiğiniz bildirimlerin istatistiklerini görebiliyorsunuz.
+        Gelin madde madde nasıl kuracağınızı anlatayım...</p>
+    </blockquote>
 
-<ol>
-<li><a href="http://www.onesignal.com">www.onesignal.com</a>'a girin.
-</li>
-<li>Yeni bir 'app' oluşturun</li>
-<li>Şimdi yeni sekmede developer.apple.com'u açın</li>
-<li><em>Certificates/Identifiers</em>'a tıklayın
-</li>
-<li><em>App IDs</em>'e tıklayın
-</li>
-<li>Yeni bir tane ekleyin</li>
-<li>Sonra oluşturduğunuz uygulamayı düzenlemeye tıklayın</li>
-<li><em>Anahtar Zinciri Erişimi</em>'ni açın</li>
-<li>Menü çubuğundan Sertifika Yardımcısı > Sertifika otoritesinden sertifika isteyin'e tıklayın</li>
-<li>Bu .cert uzantılı dosyayı numara 7'de açılan sayfaya yükleyin</li>
-<li>Gelen sertifikayı indirin ve açın</li>
-<li>Adı<em>IOS Push Services</em> ile başlayan sertifikaya tıklayın
-</li>
-<li>Sonra bu sertifikaya sağ tıklayıp, dışarı aktarın</li>
-<li>Onesignal.com'a dönün, dışa aktardığınız .p12 dosyasını onesignal.com'a yükleyin</li>
-<li>Terminal'i açın (ipucu: CMD + Boşluğa basarak terminali açabilirsiniz)</li>
-<li>Terminal'e, <code>cd</code> yazın ve yanına proje klasörünüzü sürükleyip bırakın ve enter'a basın</li>
-<li>Şu şekilde görünüyor olmalı: <code>cd /Users/***/Desktop/XcodeApps/***\ ***</code> </li>
-<li><code>ls</code>, yazıp enter'a basın</li>
-<li><code>pod init</code>, yazıp enter'a basın</li>
-<li><code>ls</code>, yazıp enter'a basın</li>
-<li><code>open Podfile</code>, yazıp enter'a basın</li>
-<li>do - and arasına bir yerlere <code>pod 'OneSignal'</code> yazın ve dosyayı kaydedin</li>
-<li>Sonra <code>pod install</code>, yazın enter'a basın.</li>
-<li>Sonra proje dosyanızda oluşan example.xcworkspace'e benzer dosyaya tıklayarak projenizi açın</li>
-<li>Capabilities kısmını açın, Push capability: kısmını açık yapın </li>
-<li>Background capability: açık yapın</li>
-<li>Background capability kısmından, remote push notification: kısmını açık yapın</li>
-<li>Ve her şey tamam.</li>
-</ol>
+    <ol>
+      <li><a href="https://www.onesignal.com">onesignal.com</a>'a gidin
+        <ol>
+          <li>Giriş yapın ve <strong>Create a new app</strong> butonuna tıklayın</li>
+          <li><strong>Apple iOS (APNS)</strong> seçeneğini seçin</li>
+        </ol>
+      </li>
+      <li>Yeni bir sekme açın ve <a href="https://www.onesignal.com/provisionator">onesignal.com/provisionator</a> adresine gidin
+        <ol>
+          <li><strong>Get Started</strong> butonuna tıklayın</li>
+          <li>Apple Geliştirici Hesabınızın bilgileri ile giriş yapın</li>
+          <li>Push notification kullanmak istediğiniz uygulamayı seçin, <strong>Generate</strong> butonuna tıklayın</li>
+          <li>Sonra, <strong>Download .p12 File</strong> butonuna tıklayın ve yanındaki <strong><em>şifreyi mutlaka kopyalayın</em></strong></li>
+        </ol>
+      </li>
+      <li><a href="https://www.onesignal.com">onesignal.com</a>’un bulunduğu sekmeye geri dönün
+        <ol>
+          <li>Biraz önce indirdiğiniz .p12 uzantılı dosyayı yükleyin</li>
+          <li>Az önce kopyaladığınız şifreyi ilgili alana yapıştırın ve <strong>Save</strong> butonuna basın</li>
+          <li><strong>Native iOS</strong> seçeneğini seçin, sonra karşınıza çıkan <strong>Your App ID</strong>'yi bir yere kaydedin
+            <code class="highlighter-rouge">(örnek: 5eb5a37e-b458-11e3-ac11-000c2940e62c)</code></li>
+        </ol>
+      </li>
+      <li>
+        <p>Tarayıcınızı kapatabilirsiniz</p>
+      </li>
+      <li><strong>terminal</strong>'i açın (ipucu: CMD + Boşluk kombinasyonunu kullanın ve terminal yazın…)
+        <ol>
+          <li><code class="highlighter-rouge">cd </code> yazın ve bir boşluk bırakıp Xcode proje dosyanızı buraya sürükleyip
+            bırakın, enter'a basın</li>
+          <li>Terminal ekranınız şu şekilde gözükmeli: <code class="highlighter-rouge">cd /Users/***/Desktop/XcodeApps/***\ ***</code></li>
+          <li><code class="highlighter-rouge">pod init</code> yazın ve enter'a basın</li>
+          <li><code class="highlighter-rouge">open Podfile</code> yazın ve enter'a basın</li>
+          <li><code class="highlighter-rouge">do</code> - <code class="highlighter-rouge">and</code> arasında kalan alana,
+            <code class="highlighter-rouge">pod 'OneSignal'</code> yazın ve dosyayı kaydedin</li>
+          <li><code class="highlighter-rouge">pod install</code> yazın ve enter'a basın, bekleyelim...</li>
+        </ol>
+      </li>
+      <li>Daha sonra projenizi açın, artık <strong>example.xcworkspace</strong> benzeri bir dosyaya tıklayarak açmalısınız
+        <ol>
+          <li><strong>Capabilities</strong> sekmesini açın, Push capability: aktif edin</li>
+          <li>Background Capability: aktif edin</li>
+          <li>Background Capability kısmındaki, remote push notification: aktif edin</li>
+        </ol>
+      </li>
+      <li>Sonra, projenizdeki <strong>AppDelegate.swift</strong> dosyasını aşağıdaki şekilde düzenleyin:</li>
+    </ol>
 
-<p>*<em>İyi şanslar! *</em></p>
+    <div class="language-swift highlighter-rouge">
+      <pre class="highlight"><code><span class="kd">import</span> <span class="kt">OneSignal</span>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="http://batuhan.me/onesignal-push-notification-ios/">OneSignal Push Notification for iOS</a> is maintained by <a href="https://github.com/batuhankok">batuhankok</a>.</span>
+<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
-      </footer>
+<span class="c1">//Alttaki satırı ekleyin. Fakat '5eb5a37e-b458-11e3-ac11-000c2940e62c' kısmını, kendi OneSignal App ID'niz ile değiştirmeyi unutmayın (yukarıda kaydetmiştik)</span>
+<span class="kt">OneSignal</span><span class="o">.</span><span class="nf">initWithLaunchOptions</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">,</span> <span class="nv">appId</span><span class="p">:</span> <span class="s">"5eb5a37e-b458-11e3-ac11-000c2940e62c"</span><span class="p">)</span>
 
-    </section>
+<span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
 
-  
-  </body>
+    <h3 id="thats-all-brilliant-">Hepsi bu kadar 🎉</h3>
+
+    <h4 id="good-luck-">İyi şanslar 😊💪</h4>
+
+
+
+    <footer class="site-footer">
+
+      <span class="site-footer-owner"><a href="https://github.com/batuhankok/onesignal-push-notification-ios">onesignal-push-notification-ios</a> projesi <a href="https://github.com/batuhankok">batuhankok</a> tarafından yürütülmektedi.</span>
+
+      <span class="site-footer-credits">Bu sayfa <a href="https://pages.github.com">GitHub Pages</a> ile oluşturulmuştur.</span>
+    </footer>
+  </section>
+
+
+</body>
+
 </html>
