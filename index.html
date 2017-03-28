@@ -20,7 +20,7 @@
 
     <section class="main-content">
 
-      <p>Hey,</p>
+      <p><b>Hey!</b></p>
 
       <p>
          I know, setting up the Push Notification can be so annoying problem for iOS developers. 
@@ -30,11 +30,11 @@
 
       <ol>
 
-        <li>Go to www.onesignal.com</li>
+        <li>Go to <a href="https://onesignal.com">onesignal.com</a></li>
         <li>Login and click the "Create a new app"</li>
         <li>Select "Apple iOS (APNS)"</li>
-        <li>Open new tab, go to https://onesignal.com/provisionator</li>
-        <li>Click "Get Started"</li>
+        <li>Open new tab, go to <a href="https://onesignal.com/provisionator">onesignal.com/provisionator</a></li>
+        <li>Click <b>"Get Started"</b></li>
         <li>Login with your Apple Developer Account</li>
         <li>Select your app that you want to use push notification, click "Generate"</li>
         <li>Click "Download .p12 File" and copy the password</li>
@@ -55,7 +55,7 @@
         <li>Background capability: switch on, in the background capability, remote push notification: switch on</li>
         <li>Then, edit your AppDelegate.swift like above:</li>
 
-        <code>
+        {% highlight swift %}
         import OneSignal
 
         func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -65,7 +65,7 @@
           
           return true
         }
-        </code>
+        {% endhighlight %}
 
         <li>Then, save your Xcode project.</li>
 
