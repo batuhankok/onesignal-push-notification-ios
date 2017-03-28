@@ -19,46 +19,63 @@
     </section>
 
     <section class="main-content">
+
       <p>Hey,</p>
 
-<p>I know, Push Notification can be so annoying problem for iOS developers. However, OneSignal makes your life easy for sending notifications by using web interface of OneSignal. The installing process is a little bit hard, so, I have written here to make your life easier!</p>
+      <p>
+         I know, setting up the Push Notification can be so annoying problem for iOS developers. 
+         However, OneSignal makes your life easy for sending notifications by using web interface of OneSignal. 
+         The installing process is a little bit hard, so, I have written here to make your life easier!
+      </p>
 
-<ol>
-<li>Go to <a href="http://www.onesignal.com">www.onesignal.com</a>
-</li>
-<li>Create a new app</li>
-<li>Open new tab, go to developer.apple.com</li>
-<li>Open <em>Certificates/Identifiers</em>
-</li>
-<li>Click <em>App IDs</em>
-</li>
-<li>Add new one</li>
-<li>Then, edit the app that was just made by you</li>
-<li><em>Open Keychain Access</em> in your computer</li>
-<li>Request a certificate from a certificate authority </li>
-<li>Upload this cert file to editing page (return to no.7)</li>
-<li>Download the certificate and open it</li>
-<li>Click the certificate that is starting with <em>IOS Push Services</em>
-</li>
-<li>Right click to this certificate, then export it</li>
-<li>Return to onesignal.com, upload the .p12 file to OneSignal</li>
-<li>Open terminal (hint: you can push CMD + Space)</li>
-<li>Write, <code>cd</code> and drag drop the your app folder to terminal, press enter</li>
-<li>It seems like this: <code>cd /Users/***/Desktop/XcodeApps/***\ ***</code> </li>
-<li>Write, <code>ls</code>, then press enter</li>
-<li>Write, <code>pod init</code>, then press enter</li>
-<li>Write, <code>ls</code>, then press enter</li>
-<li>Write, <code>open Podfile</code>, then press enter</li>
-<li>Write between do - and, <code>pod 'OneSignal'</code> to the file that did opened and save it</li>
-<li>Write, <code>pod install</code>, then press enter</li>
-<li>Then open your project with clicking example.xcworkspace</li>
-<li>Open Capabilities, Push capability: switch on </li>
-<li>Background capability: switch on</li>
-<li>On the background capability, remote push notification: switch on</li>
-<li>Everything is okay.</li>
-</ol>
+      <ol>
 
-<p>*<em>Good luck! *</em></p>
+        <li>Go to www.onesignal.com</li>
+        <li>Login and click the "Create a new app"</li>
+        <li>Select "Apple iOS (APNS)"</li>
+        <li>Open new tab, go to https://onesignal.com/provisionator</li>
+        <li>Click "Get Started"</li>
+        <li>Login with your Apple Developer Account</li>
+        <li>Select your app that you want to use push notification, click "Generate"</li>
+        <li>Click "Download .p12 File" and copy the password</li>
+        <li>Turn back to the www.onesignal.com's tab</li>
+        <li>Select the file that you have just downloaded</li>
+        <li>Paste the password to the related input, click "Save"</li>
+        <li>Select "Native iOS", then copy "Your App ID" <code>(like: 5eb5a37e-b458-11e3-ac11-000c2940e62c)</code></li>
+        <li>You can close the web browser</li>
+        <li>Open the terminal (hint: you can push CMD + Space and write terminal...)</li>
+        <li>Write, cd and drag drop the your app folder to the terminal, press enter</li>
+        <li>It has to seem like this: <code>cd /Users/***/Desktop/XcodeApps/***\ ***</code></li>
+        <li>Write, <code>pod init</code>, then press enter</li>
+        <li>Write, <code>open Podfile</code>, then press enter</li>
+        <li>Write between <code>do</code> - <code>and</code>, <code>pod 'OneSignal'</code> to the file that did opened and save it</li>
+        <li>Write, <code>pod install</code>, then press enter</li>
+        <li>Then open your project with clicking example.xcworkspace</li>
+        <li>Open Capabilities tab, Push capability: switch on</li>
+        <li>Background capability: switch on, in the background capability, remote push notification: switch on</li>
+        <li>Then, edit your AppDelegate.swift like above:</li>
+
+        <code>
+        import OneSignal
+
+        func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+          
+          //Add this line. Replace '5eb5a37e-b458-11e3-ac11-000c2940e62c' with your OneSignal App ID (you have just copied.)
+          OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
+          
+          return true
+        }
+        </code>
+
+        <li>Then, save your Xcode project.</li>
+
+      </ol>
+
+      <p>
+        That's all, brilliant 🎉
+        <br />
+        Good luck 😊💪
+      </p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="http://batuhan.me/onesignal-push-notification-ios/">OneSignal Push Notification for iOS</a> is maintained by <a href="https://github.com/batuhankok">batuhankok</a>.</span>
@@ -67,7 +84,6 @@
       </footer>
 
     </section>
-
   
   </body>
 </html>
