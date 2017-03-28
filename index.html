@@ -56,18 +56,18 @@
         <li>In the Background Capability, remote push notification: switch on</li>
         <li>Then, edit your <b>AppDelegate.swift</b> like above:</li>
 
-        <div class="language-swift highlighter-rouge">
-          <pre class="highlight">
-              import OneSignal
+        ```swift
+        import OneSignal
 
-              func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-                
-                //Add this line. Replace '5eb5a37e-b458-11e3-ac11-000c2940e62c' with your OneSignal App ID (you have just copied.)
-                OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
-                
-                return true
-          </pre>
-        </div>
+        func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+          
+          //Add this line. Replace '5eb5a37e-b458-11e3-ac11-000c2940e62c' with your OneSignal App ID (you have just copied.)
+          OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
+          
+          return true
+        }
+        ```
+         
 
         <li>Then, save your Xcode project.</li>
 
