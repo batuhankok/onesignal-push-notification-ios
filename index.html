@@ -35,6 +35,7 @@
           <li>Select “Apple iOS (APNS)”</li>
         </ol>
       </li>
+
       <li>Open new tab, go to <a href="https://www.onesignal.com/provisionator">onesignal.com/provisionator</a>
         <ol>
           <li>Click <strong>Get Started</strong></li>
@@ -43,6 +44,7 @@
           <li>Click <strong>Download .p12 File</strong> and <strong><em>copy the password</em></strong></li>
         </ol>
       </li>
+
       <li>Turn back to the <a href="https://www.onesignal.com">onesignal.com</a>’s tab
         <ol>
           <li>Select the file that you have just downloaded</li>
@@ -50,9 +52,11 @@
           <li>Select <strong>Native iOS</strong>, then copy <strong>Your App ID</strong> <code class="highlighter-rouge">(like: 5eb5a37e-b458-11e3-ac11-000c2940e62c)</code></li>
         </ol>
       </li>
+
       <li>
         <p>You can close the web browser</p>
       </li>
+
       <li>Open the <strong>terminal</strong> (hint: you can push CMD + Space and write terminal…)
         <ol>
           <li>Write, <code class="highlighter-rouge">cd </code> and drag drop the your app folder to the terminal, press enter</li>
@@ -63,6 +67,7 @@
           <li>Write, <code class="highlighter-rouge">pod install</code>, then press enter</li>
         </ol>
       </li>
+
       <li>Then open your project with clicking <strong>example.xcworkspace</strong>
         <ol>
           <li>Open <strong>Capabilities</strong> tab, Push capability: switch on</li>
@@ -70,27 +75,26 @@
           <li>In the Background Capability, remote push notification: switch on</li>
         </ol>
       </li>
+
       <li>Then, edit your <strong>AppDelegate.swift</strong> like above:</li>
     </ol>
 
     <div class="language-swift highlighter-rouge">
       <pre class="highlight"><code><span class="kd">import</span> <span class="kt">OneSignal</span>
 
-<span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+      <span class="kd">func</span> <span class="nf">application</span><span class="p">(</span><span class="nv">application</span><span class="p">:</span> <span class="kt">UIApplication</span><span class="p">,</span> <span class="n">didFinishLaunchingWithOptions</span> <span class="nv">launchOptions</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSObject</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
 
-<span class="c1">//Add this line. Replace '5eb5a37e-b458-11e3-ac11-000c2940e62c' with your OneSignal App ID (you have just copied.)</span>
-<span class="kt">OneSignal</span><span class="o">.</span><span class="nf">initWithLaunchOptions</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">,</span> <span class="nv">appId</span><span class="p">:</span> <span class="s">"5eb5a37e-b458-11e3-ac11-000c2940e62c"</span><span class="p">)</span>
+      <span class="c1">//Add this line. Replace '5eb5a37e-b458-11e3-ac11-000c2940e62c' with your OneSignal App ID (you have just copied.)</span>
+      <span class="kt">OneSignal</span><span class="o">.</span><span class="nf">initWithLaunchOptions</span><span class="p">(</span><span class="n">launchOptions</span><span class="p">,</span> <span class="nv">appId</span><span class="p">:</span> <span class="s">"5eb5a37e-b458-11e3-ac11-000c2940e62c"</span><span class="p">)</span>
 
-<span class="k">return</span> <span class="kc">true</span>
-<span class="p">}</span>
-</code></pre>
+      <span class="k">return</span> <span class="kc">true</span>
+      <span class="p">}</span>
+      </code></pre>
     </div>
 
     <h3 id="thats-all-brilliant-">That’s all, brilliant 🎉</h3>
 
     <h4 id="good-luck-">Good luck 😊💪</h4>
-
-
 
     <footer class="site-footer">
 
